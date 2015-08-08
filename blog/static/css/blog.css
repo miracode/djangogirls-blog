@@ -1,5 +1,5 @@
 .page-header {
-    background-color: #ff9400;
+    background-color: #46DBCA;
     margin-top: 0;
     padding: 20px 20px 20px 40px;
 }
@@ -8,6 +8,15 @@
     color: #ffffff;
     font-size: 36pt;
     text-decoration: none;
+    font-family: 'Amatic SC', cursive;
+}
+
+.page-header p, .page-header p:hover {
+    color: #ffffff;
+    font-size: 32pt;
+    text-decoration: none;
+    font-family: 'Amatic SC', cursive;
+    margin-right: 40px;
 }
 
 .content {
@@ -15,12 +24,16 @@
 }
 
 h1, h2, h3, h4 {
-    font-family: 'Lobster', cursive;
+    /*font-family: 'Lobster', cursive;*/
+    font-family: 'Amatic SC', cursive;
+    font-weight: 700;
 }
 
 .date {
     float: right;
     color: #828282;
+    font-family: 'Amatic SC', cursive;
+    font-size: 16pt;
 }
 
 .save {
@@ -40,6 +53,8 @@ h1, h2, h3, h4 {
 
 .post {
     margin-bottom: 70px;
+    font-size: 16px;
+    font-family: 'Josefin Sans', sans-serif;
 }
 
 .post h1 a, .post h1 a:visited {
