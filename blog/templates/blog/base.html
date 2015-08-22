@@ -2,30 +2,40 @@
 
 <html>
     <head>
-        <title>Django Girls blog</title>
+        <title>Michelle Rascati's blog</title>
 
         <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
         <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
         <!-- <link href="http://fonts.googleapis.com/css?family=Lobster&subset=latin,latin-ext" rel="stylesheet" type="text/css"> -->
         <link href='http://fonts.googleapis.com/css?family=Amatic+SC:700,400' rel='stylesheet' type='text/css'>
         <link href='http://fonts.googleapis.com/css?family=Josefin+Sans' rel='stylesheet' type='text/css'>
+        <link href='http://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
         <link rel="stylesheet" href="{% static 'css/blog.css' %}">
     </head>
     <body>
         <div class="page-header">
             {% if user.is_authenticated %}
+                <a href="{% url 'django.contrib.auth.views.logout' %}" class="top-menu" name="logout">Logout</a>
                 <a href="{% url "post_new" %}" class="top-menu"><span class="glyphicon glyphicon-plus"></span></a>
-                <a href="{% url 'django.contrib.auth.views.logout' %}" class="top-menu" name="logout"><span class="glyphicon glyphicon-log-out"></a></small>
-                <p class="top-menu">Hello {{ user.username }}<small></p>
+                <a href="{% url 'post_draft_list' %}" class="top-menu"><span class="glyphicon glyphicon-edit"></span></a>
+                <p class="top-menu">Hello, {{ user.username }}!<small></p>
             {% else %}
-                <a href="{% url 'django.contrib.auth.views.login' %}" class="top-menu" name="login"><span class="glyphicon glyphicon-log-in"></span></a>
+                <a href="{% url 'django.contrib.auth.views.login' %}" class="top-menu" name="login">Login</span></a>
             {% endif %}
-            <h1><a href="/">Michelle's Blog</a></h1>
+            <h1><a href="/"><img src="{%static 'images/MiRa_logo.png' %}"/></a></h1>
+        </div>
+        <div class='sub-header'>
+            <p>
+                <a href="/">Blog</a>
+                <a href="{% url 'code' %}">Code</a>
+                <a href="{% url 'about' %}">About</a>
+                <a href="{% url 'contact' %}">Contact</a>
+            </p>
         </div>
 
         <div class="content container">
             <div class="row">
-                <div class="col-md-8">
+                <div class="col-md-12">
                     {% block content %}
                     {% endblock %}
                 </div>
